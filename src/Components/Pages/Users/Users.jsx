@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
+
+import User from "./user";
 const Users = () => {
 
     const [users, setUsers] = useState([]);
@@ -24,7 +26,33 @@ const Users = () => {
                 <h1 className="text-center p-6 text-4xl font-semibold bg-blue-300">All Users</h1>
             </div>
 
-            <div></div>
+            <div className="w-[90%] mx-auto">
+
+                <table className="table-auto w-full custom-table">
+                    <thead>
+                        <tr className="bg-blue-500 text-white">
+                            <th className="px-4 py-2">Name</th>
+                            <th className="px-4 py-2">Email</th>
+                            <th className="px-4 py-2">Category</th>
+                            <th className="px-4 py-2">Age</th>
+                            <th>Like</th>
+                            <th>Dislike</th>
+                            <th>Features</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody className="border ">
+
+                        {
+                            users.map((user) => <User key={user._id} user={user}></User>)
+                        }
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
 
         </div>
     );
