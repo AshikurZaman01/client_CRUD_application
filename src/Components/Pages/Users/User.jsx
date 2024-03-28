@@ -11,9 +11,9 @@ const User = ({ user }) => {
             <td className="border px-4 py-2">{email}</td>
             <td className="border px-4 py-2">{category}</td>
             <td className="border px-4 py-2">{age}</td>
-            <td>{like}</td>
-            <td>{dislike}</td>
-            <td className="flex flex-row items-center">{
+            <td className="border px-4 py-2">{like}</td>
+            <td className="border px-4 py-2">{dislike}</td>
+            <td className="flex flex-row items-center border-r">{
                 features.map((feature, indx) => {
                     return (
                         <div key={indx} className="flex flex-col gap-2">
@@ -24,7 +24,7 @@ const User = ({ user }) => {
             }</td>
 
             <td>
-                <tr className="flex gap-2">
+                <tr className="flex gap-2 border-r">
                     <button className="btn btn-sm btn-success text-2xl text-white"><GrUpdate className="text-xl" /></button>
                     <button className="btn btn-sm btn-error text-2xl text-white"><MdDeleteForever /></button>
                 </tr>

@@ -28,29 +28,27 @@ const Users = () => {
 
             <div className="w-[90%] mx-auto">
 
-                <table className="table-auto w-full custom-table">
+                <table className="table-auto w-full border-collapse table ">
                     <thead>
                         <tr className="bg-blue-500 text-white">
-                            <th className="px-4 py-2">Name</th>
-                            <th className="px-4 py-2">Email</th>
-                            <th className="px-4 py-2">Category</th>
-                            <th className="px-4 py-2">Age</th>
-                            <th>Like</th>
-                            <th>Dislike</th>
-                            <th>Features</th>
-                            <th>Action</th>
+                            <th className="px-4 py-2 border border-gray-400">Name</th>
+                            <th className="px-4 py-2 border border-gray-400">Email</th>
+                            <th className="px-4 py-2 border border-gray-400">Category</th>
+                            <th className="px-4 py-2 border border-gray-400">Age</th>
+                            <th className="px-4 py-2 border border-gray-400">Like</th>
+                            <th className="px-4 py-2 border border-gray-400">Dislike</th>
+                            <th className="px-4 py-2 border border-gray-400">Features</th>
+                            <th className="px-4 py-2 border border-gray-400">Action</th>
                         </tr>
                     </thead>
-                    <tbody className="border ">
 
+                    <tbody>
                         {
                             users.map((user) => <User key={user._id} user={user}></User>)
                         }
-
-
-
                     </tbody>
                 </table>
+
 
             </div>
 
