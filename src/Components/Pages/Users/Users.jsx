@@ -2,9 +2,25 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import User from "./user";
+import Pagination from "../Pagination/Pagination";
 const Users = () => {
 
     const [users, setUsers] = useState([]);
+
+    {/* Pagination */ }
+    const [currentPage, setCurrentPage] = useState(1);
+    const userPerPage = 7;
+
+    const totalPages = Math.ceil(users.length / userPerPage);
+
+    const indexOfLastUser = currentPage * userPerPage;
+    const indexOfFirstUser = indexOfLastUser - userPerPage;
+    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
+
 
     useEffect(() => {
         fetch('http://localhost:5000/api/v1/users', {
@@ -18,7 +34,6 @@ const Users = () => {
             .then(data => setUsers(data))
     }, [])
 
-    console.log(users)
 
     return (
         <div>
@@ -44,12 +59,20 @@ const Users = () => {
 
                     <tbody>
                         {
-                            users.map((user) => <User key={user._id} user={user}></User>)
+                            currentUsers.map((user) => <User key={user._id} user={user}></User>)
                         }
                     </tbody>
                 </table>
 
-
+                {/* Pagination */}
+                <div className="flex justify-center mt-4">
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        handlePageChange={handlePageChange}
+                    ></Pagination>
+                </div>
+                {/* Pagination */}
             </div>
 
         </div>
