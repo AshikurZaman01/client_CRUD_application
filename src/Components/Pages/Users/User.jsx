@@ -2,7 +2,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
 const User = ({ user }) => {
 
-    const { _id, name, email, age, category, like, dislike, features, services } = user || {};
+    const { _id, name, email, age, category, like, dislike} = user || {};
 
 
     return (
@@ -13,15 +13,7 @@ const User = ({ user }) => {
             <td className="border px-4 py-2">{age}</td>
             <td className="border px-4 py-2">{like}</td>
             <td className="border px-4 py-2">{dislike}</td>
-            <td className="flex flex-row items-center border-r">{
-                features.map((feature, indx) => {
-                    return (
-                        <div key={indx} className="flex flex-col gap-2">
-                            <span className="badge badge-primary">{feature}</span>
-                        </div>
-                    )
-                })
-            }</td>
+
 
             <td>
                 <tr className="flex gap-2 border-r">
