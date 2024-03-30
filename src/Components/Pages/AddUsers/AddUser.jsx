@@ -36,6 +36,22 @@ const AddUser = () => {
                                 </div>
                             </div>
 
+                            <div className='flex justify-center items-center gap-5 mb-5'>
+                                <div className='flex-1'>
+                                    <label className="label text-blue-500">Like</label>
+                                    <input type="number" name="like" id="" placeholder='Enter Your Like' className='shadow-md shadow-gray-400 px-2 py-2 rounded-md w-full outline-none' />
+                                </div>
+
+                                <div className='flex-1'>
+                                    <label className="label text-blue-500">Dislike</label>
+                                    <input type="number" name="disLike" id="" placeholder='Enter Your Dislike' className='shadow-md shadow-gray-400 px-2 py-2 rounded-md w-full outline-none' />
+                                </div>
+                            </div>
+
+                            <div className=''>
+                                <button className='btn  btn-sm w-full btn-success'>submit</button>
+                            </div>
+
                         </form>
 
                         <div className="modal-action">
