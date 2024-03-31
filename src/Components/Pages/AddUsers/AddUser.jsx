@@ -16,7 +16,6 @@ const AddUser = () => {
             name, email, age, category, like, disLike
         }
 
-        console.log(user);
 
         fetch('http://localhost:5000/api/v1/users/createUser', {
             method: 'POST',
@@ -33,6 +32,7 @@ const AddUser = () => {
                     alert('Something went wrong');
                 }
             });
+        e.target.reset();
 
     }
 
@@ -90,7 +90,7 @@ const AddUser = () => {
 
                         <div className="modal-action">
                             <form method="dialog">
-                                <button className="btn">Close</button>
+                                <button className="btn btn-error">Close</button>
                             </form>
                         </div>
                     </div>
